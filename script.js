@@ -81,7 +81,13 @@ var mensagensMagro = [
   
     var nome = document.getElementById("entrada-nome").value
     var peso = parseFloat(document.getElementById("entrada-peso").value)
-    var altura = parseFloat(document.getElementById("entrada-altura").value)
+    var alturaValor = document.getElementById("entrada-altura").value
+    alturaValor = alturaValor.replace(",", ".")
+    if (parseFloat(alturaValor) > 3) {
+        alturaValor = parseFloat(alturaValor) / 100
+        document.getElementById("entrada-altura").value = parseFloat(alturaValor).toFixed(2)
+    }
+    var altura = parseFloat(alturaValor)
   
     if (nome === "") {
       nome = "Amigo"
@@ -147,4 +153,6 @@ var mensagensMagro = [
     }
   
     caixaResultado.style.display = "block"
+
+    
   }

@@ -78,14 +78,33 @@ var mensagensMagro = [
   }
   
   function calcular() {
-  
+
     var nome = document.getElementById("entrada-nome").value
-    var peso = parseFloat(document.getElementById("entrada-peso").value)
+  
+    var pesoValor = parseFloat(document.getElementById("entrada-peso").value)
+    if (pesoValor < 25) {
+      alert("Peso inválido! Mínimo 25kg")
+      return
+    }
+    if (pesoValor > 300) {
+      alert("Peso inválido! Máximo 300kg")
+      return
+    }
+    var peso = pesoValor
+  
     var alturaValor = document.getElementById("entrada-altura").value
     alturaValor = alturaValor.replace(",", ".")
     if (parseFloat(alturaValor) > 3) {
-        alturaValor = parseFloat(alturaValor) / 100
-        document.getElementById("entrada-altura").value = parseFloat(alturaValor).toFixed(2)
+      alturaValor = parseFloat(alturaValor) / 100
+      document.getElementById("entrada-altura").value = parseFloat(alturaValor).toFixed(2)
+    }
+    if (parseFloat(alturaValor) < 1.10) {
+      alert("Altura inválida! Mínimo 1,10m")
+      return
+    }
+    if (parseFloat(alturaValor) > 2.20) {
+      alert("Altura inválida! Máximo 2,20m")
+      return
     }
     var altura = parseFloat(alturaValor)
   
@@ -108,51 +127,36 @@ var mensagensMagro = [
     var mensagem = document.getElementById("mensagem")
   
     numeroImc.textContent = imcFormatado
-  
     caixaResultado.className = "resultado"
   
     if (imc < 18.5) {
-  
       caixaResultado.classList.add("magro")
       emoji.textContent = "💀"
       categoria.textContent = "Magro"
       categoria.style.color = "#00aaff"
-  
-      mensagem.textContent =
-        pegarMensagemAleatoria(mensagensMagro, nome, imcFormatado)
+      mensagem.textContent = pegarMensagemAleatoria(mensagensMagro, nome, imcFormatado)
   
     } else if (imc <= 24.9) {
-  
       caixaResultado.classList.add("normal")
       emoji.textContent = "👌"
       categoria.textContent = "Peso Normal"
       categoria.style.color = "#00cc44"
-  
-      mensagem.textContent =
-        pegarMensagemAleatoria(mensagensNormal, nome, imcFormatado)
+      mensagem.textContent = pegarMensagemAleatoria(mensagensNormal, nome, imcFormatado)
   
     } else if (imc <= 29.9) {
-  
       caixaResultado.classList.add("sobrepeso")
       emoji.textContent = "🤏"
       categoria.textContent = "Sobrepeso"
       categoria.style.color = "#ffaa00"
-  
-      mensagem.textContent =
-        pegarMensagemAleatoria(mensagensSobrepeso, nome, imcFormatado)
+      mensagem.textContent = pegarMensagemAleatoria(mensagensSobrepeso, nome, imcFormatado)
   
     } else {
-  
       caixaResultado.classList.add("obeso")
       emoji.textContent = "🍔"
       categoria.textContent = "Obesidade"
       categoria.style.color = "#ff3c3c"
-  
-      mensagem.textContent =
-        pegarMensagemAleatoria(mensagensObeso, nome, imcFormatado)
+      mensagem.textContent = pegarMensagemAleatoria(mensagensObeso, nome, imcFormatado)
     }
   
     caixaResultado.style.display = "block"
-
-    
   }

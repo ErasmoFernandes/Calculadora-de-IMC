@@ -1,0 +1,157 @@
+body {
+    background: linear-gradient(135deg, #e20a0a 0%,#0a0606 40%,#a19090 100% );
+    color: #f0f0f0;
+    font-family: 'DM Sans', sans-serif;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+  }
+  
+  .caixa-central {
+    width: 100%;
+    max-width: 480px;
+  }
+  
+  .titulo {
+    text-align: center;
+    margin-bottom: 40px;
+  }
+  
+  .titulo h1 {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 72px;
+    color: #ff3c3c;
+    letter-spacing: 2px;
+  }
+  
+  .titulo p {
+    color: #666;
+    font-size: 13px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    margin-top: 6px;
+  }
+  
+  .cartao {
+    background: #141414;
+    border: 1px solid #2a2a2a;
+    border-radius: 16px;
+    padding: 32px;
+  }
+  
+  .campo {
+    margin-bottom: 20px;
+  }
+  
+  .campo label {
+    display: block;
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: #666;
+    margin-bottom: 8px;
+    font-weight: 600;
+  }
+  
+  .campo input {
+    width: 100%;
+    background: #0a0a0a;
+    border: 1px solid #2a2a2a;
+    border-radius: 10px;
+    padding: 14px 16px;
+    color: #f0f0f0;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 16px;
+    outline: none;
+    box-sizing: border-box;
+  }
+  
+  .campo input:focus {
+    border-color: #ff3c3c;
+  }
+  
+  .dois-campos {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+  }
+  
+  .botao-calcular {
+    width: 100%;
+    background: #ff3c3c;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    padding: 16px;
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 22px;
+    letter-spacing: 2px;
+    cursor: pointer;
+    margin-top: 8px;
+  }
+  
+  .botao-calcular:hover {
+    background: #ff5555;
+  }
+  
+  .resultado {
+    margin-top: 24px;
+    border-radius: 12px;
+    padding: 24px;
+    display: none;
+    border: 1px solid #2a2a2a;
+  }
+  
+  .resultado.magro {
+    background: #001a2e;
+    border-top: 3px solid #00aaff;
+  }
+  
+  .resultado.normal {
+    background: #001a00;
+    border-top: 3px solid #00cc44;
+  }
+  
+  .resultado.sobrepeso {
+    background: #1a1200;
+    border-top: 3px solid #ffaa00;
+  }
+  
+  .resultado.obeso {
+    background: #1a0000;
+    border-top: 3px solid #ff3c3c;
+  }
+  
+  .emoji-resultado {
+    font-size: 36px;
+    margin-bottom: 12px;
+    display: block;
+  }
+  
+  .numero-imc {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 56px;
+    line-height: 1;
+  }
+  
+  .texto-imc {
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: #666;
+    margin-bottom: 16px;
+  }
+  
+  .categoria {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 28px;
+    margin-bottom: 12px;
+  }
+  
+  .mensagem {
+    font-size: 14px;
+    line-height: 1.7;
+    color: #ccc;
+  }

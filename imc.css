@@ -7,6 +7,9 @@ body {
     align-items: center;
     justify-content: center;
     padding: 20px;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
   }
   
   .caixa-central {
@@ -163,4 +166,30 @@ body {
     margin-top: 8px;
     padding: 0 20px;
     line-height: 1.6;
+}
+
+.Dev {
+  text-align: center;
+  padding: 20px;
+  color: #888;
+  font-size: 13px;
+  margin-top: auto;
+  width: 100%;
+}
+
+.Dev {
+  text-align: center;
+  padding: 20px;
+  color: #888;
+  font-size: 13px;
+}
+
+.Dev a {
+  color: #888;
+  text-decoration: none;
+  margin: 0 10px;
+}
+
+.Dev a:hover {
+  color: #000000;
 }

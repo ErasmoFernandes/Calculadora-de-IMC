@@ -193,3 +193,15 @@ body {
 .Dev a:hover {
   color: #000000;
 }
+
+.cartao select {
+  width: 100%;
+  background: #0a0a0a;
+  border: 1px solid #2a2a2a;
+  border-radius: 10px;
+  padding: 14px 16px;
+  color: #f0f0f0;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 16px;
+  outline: none;
+}

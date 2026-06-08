@@ -183,6 +183,12 @@ var mensagensMagro = [
   function calcular() {
 
     var nome = document.getElementById("entrada-nome").value
+    var sexo = document.getElementById("entrada-sexo").value
+  
+    if (sexo === "") {
+      alert("Selecione o sexo!")
+      return
+    }
   
     var pesoValor = parseFloat(document.getElementById("entrada-peso").value)
     if (pesoValor < 25) {
@@ -211,10 +217,7 @@ var mensagensMagro = [
     }
     var altura = parseFloat(alturaValor)
   
-    if (nome === "") {
-      nome = "Amigo"
-    }
-  
+    if (nome === "") { nome = "Amigo" }
     if (!peso || !altura) {
       alert("Preencha peso e altura!")
       return
@@ -232,21 +235,26 @@ var mensagensMagro = [
     numeroImc.textContent = imcFormatado
     caixaResultado.className = "resultado"
   
-    if (imc < 18.5) {
+    // limites diferentes por sexo
+    var limMagro = sexo === "masculino" ? 20 : 19
+    var limNormal = sexo === "masculino" ? 25 : 24
+    var limSobrepeso = sexo === "masculino" ? 30 : 29
+  
+    if (imc < limMagro) {
       caixaResultado.classList.add("magro")
       emoji.textContent = "💀"
       categoria.textContent = "Magro"
       categoria.style.color = "#00aaff"
       mensagem.textContent = pegarMensagemAleatoria(mensagensMagro, nome, imcFormatado)
   
-    } else if (imc <= 24.9) {
+    } else if (imc <= limNormal) {
       caixaResultado.classList.add("normal")
       emoji.textContent = "👌"
       categoria.textContent = "Peso Normal"
       categoria.style.color = "#00cc44"
       mensagem.textContent = pegarMensagemAleatoria(mensagensNormal, nome, imcFormatado)
   
-    } else if (imc <= 29.9) {
+    } else if (imc <= limSobrepeso) {
       caixaResultado.classList.add("sobrepeso")
       emoji.textContent = "🤏"
       categoria.textContent = "Sobrepeso"
@@ -261,8 +269,9 @@ var mensagensMagro = [
       mensagem.textContent = pegarMensagemAleatoria(mensagensObeso, nome, imcFormatado)
     }
   
-        caixaResultado.style.display = "block"
+    caixaResultado.style.display = "block"
     document.getElementById("entrada-nome").value = ""
     document.getElementById("entrada-peso").value = ""
     document.getElementById("entrada-altura").value = ""
+    document.getElementById("entrada-sexo").value = ""
   }

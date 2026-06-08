@@ -158,5 +158,8 @@ var mensagensMagro = [
       mensagem.textContent = pegarMensagemAleatoria(mensagensObeso, nome, imcFormatado)
     }
   
-    caixaResultado.style.display = "block"
+        caixaResultado.style.display = "block"
+    document.getElementById("entrada-nome").value = ""
+    document.getElementById("entrada-peso").value = ""
+    document.getElementById("entrada-altura").value = ""
   }

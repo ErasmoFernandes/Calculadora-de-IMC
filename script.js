@@ -242,28 +242,24 @@ var mensagensMagro = [
   
     if (imc < limMagro) {
       caixaResultado.classList.add("magro")
-      emoji.textContent = "💀"
       categoria.textContent = "Magro"
       categoria.style.color = "#00aaff"
       mensagem.textContent = pegarMensagemAleatoria(mensagensMagro, nome, imcFormatado)
   
     } else if (imc <= limNormal) {
       caixaResultado.classList.add("normal")
-      emoji.textContent = "👌"
       categoria.textContent = "Peso Normal"
       categoria.style.color = "#00cc44"
       mensagem.textContent = pegarMensagemAleatoria(mensagensNormal, nome, imcFormatado)
   
     } else if (imc <= limSobrepeso) {
       caixaResultado.classList.add("sobrepeso")
-      emoji.textContent = "🤏"
       categoria.textContent = "Sobrepeso"
       categoria.style.color = "#ffaa00"
       mensagem.textContent = pegarMensagemAleatoria(mensagensSobrepeso, nome, imcFormatado)
   
     } else {
       caixaResultado.classList.add("obeso")
-      emoji.textContent = "🍔"
       categoria.textContent = "Obesidade"
       categoria.style.color = "#ff3c3c"
       mensagem.textContent = pegarMensagemAleatoria(mensagensObeso, nome, imcFormatado)
